@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="web," />
 
 
 
@@ -79,16 +79,21 @@
 
 
 
-<meta name="description" content="快乐就是做自己喜欢的事情">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MyQueen Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/03/index.html">
+<meta name="description" content="本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程 三次握手 四次挥手  为什么连接只需要三步 断开连接需要四步呢？ tcp断开连接四步是因为客户端发送FIN请求数据断开连接，服务器端接收到请求后并不会立刻关闭连接，可能传送数据还没有完成，先同意断开请求，等数据传送完毕后发送FIN断开数据连接，这两步是分开执行的，因此需要四步来完成断开">
+<meta name="keywords" content="web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网页解析全过程">
+<meta property="og:url" content="http://yoursite.com/2018/03/26/网页解析全过程/index.html">
 <meta property="og:site_name" content="MyQueen Blog">
-<meta property="og:description" content="快乐就是做自己喜欢的事情">
+<meta property="og:description" content="本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程 三次握手 四次挥手  为什么连接只需要三步 断开连接需要四步呢？ tcp断开连接四步是因为客户端发送FIN请求数据断开连接，服务器端接收到请求后并不会立刻关闭连接，可能传送数据还没有完成，先同意断开请求，等数据传送完毕后发送FIN断开数据连接，这两步是分开执行的，因此需要四步来完成断开">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/03/26/网页解析全过程/aaa.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/26/网页解析全过程/aaa.png">
+<meta property="og:updated_time" content="2018-03-26T10:06:24.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MyQueen Blog">
-<meta name="twitter:description" content="快乐就是做自己喜欢的事情">
+<meta name="twitter:title" content="网页解析全过程">
+<meta name="twitter:description" content="本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程 三次握手 四次挥手  为什么连接只需要三步 断开连接需要四步呢？ tcp断开连接四步是因为客户端发送FIN请求数据断开连接，服务器端接收到请求后并不会立刻关闭连接，可能传送数据还没有完成，先同意断开请求，等数据传送完毕后发送FIN断开数据连接，这两步是分开执行的，因此需要四步来完成断开">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/26/网页解析全过程/aaa.png">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/03/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/26/网页解析全过程/"/>
 
 
 
 
 
-  <title>归档 | MyQueen Blog</title>
+  <title>网页解析全过程 | MyQueen Blog</title>
   
 
 
@@ -143,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,222 +242,179 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/网页解析全过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MyQueen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mypic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyQueen Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">网页解析全过程</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T17:23:57+08:00">
+                2018-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 5 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端面试题总结/" itemprop="url" rel="index">
+                    <span itemprop="name">前端面试题总结</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/27/Ajax入门/" itemprop="url">
-              
-                <span itemprop="name">Ajax入门</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-27T14:54:51+08:00"
-              content="2018-03-27" >
-          03-27
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/27/盒子模型/" itemprop="url">
-              
-                <span itemprop="name">盒子模型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-27T12:40:15+08:00"
-              content="2018-03-27" >
-          03-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/26/网页解析全过程/" itemprop="url">
-              
-                <span itemprop="name">网页解析全过程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-26T17:23:57+08:00"
-              content="2018-03-26" >
-          03-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h5 id="本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程"><a href="#本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程" class="headerlink" title="本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程"></a>本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程</h5><ul>
+<li>三次握手<br><img src="/2018/03/26/网页解析全过程/aaa.png" alt=""></li>
+<li>四次挥手<br><img src="/2018/03/26/网页解析全过程/aaa.png" alt=""></li>
+</ul>
+<h5 id="为什么连接只需要三步-断开连接需要四步呢？"><a href="#为什么连接只需要三步-断开连接需要四步呢？" class="headerlink" title="为什么连接只需要三步 断开连接需要四步呢？"></a>为什么连接只需要三步 断开连接需要四步呢？</h5><ul>
+<li>tcp断开连接四步是因为客户端发送FIN请求数据断开连接，服务器端接收到请求后并不会立刻关闭连接，可能传送数据还没有完成，先同意断开请求，等数据传送完毕后发送FIN断开数据连接，这两步是分开执行的，因此需要四步来完成断开</li>
+</ul>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/21/关于ng-include指令那些事/" itemprop="url">
-              
-                <span itemprop="name">关于ng-include指令那些事</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-21T10:02:43+08:00"
-              content="2018-03-21" >
-          03-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/21/并通过github域名去访问/" itemprop="url">
-              
-                <span itemprop="name">关于本地项目上传github并通过github域名去访问</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-21T09:48:17+08:00"
-              content="2018-03-21" >
-          03-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/21/关于ng-include指令那些事/" rel="next" title="关于ng-include指令那些事">
+                <i class="fa fa-chevron-left"></i> 关于ng-include指令那些事
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/27/盒子模型/" rel="prev" title="盒子模型">
+                盒子模型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -460,6 +422,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -480,8 +446,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -587,6 +562,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程"><span class="nav-number">1.</span> <span class="nav-text">本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#为什么连接只需要三步-断开连接需要四步呢？"><span class="nav-number">2.</span> <span class="nav-text">为什么连接只需要三步 断开连接需要四步呢？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -727,6 +718,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
