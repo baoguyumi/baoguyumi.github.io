@@ -160,7 +160,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">奔波在vue.js的前端工程师</p>
+        <p class="site-subtitle">伪前端工程师</p>
       
   </div>
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/17/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/27/Ajax入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MyQueen">
@@ -271,7 +271,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/17/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2018/03/27/Ajax入门/" itemprop="url">Ajax入门</a></h1>
         
 
         <div class="post-meta">
@@ -283,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T12:00:02+08:00">
-                2018-03-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T14:54:51+08:00">
+                2018-03-27
               </time>
             
 
@@ -293,6 +293,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端面试题总结/" itemprop="url" rel="index">
+                    <span itemprop="name">前端面试题总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -323,15 +345,616 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h5 id="关于ajax方法总结-常用的方法-："><a href="#关于ajax方法总结-常用的方法-：" class="headerlink" title="关于ajax方法总结(常用的方法)："></a>关于ajax方法总结(常用的方法)：</h5><ul>
+<li>type:GET/POST/JSONP</li>
+<li>url:’xxx’ 请求的地址</li>
+<li>data:’{key:’value’,…}’ 键值对存在，请求参数附加在url后</li>
+<li>dataType:json/jsonp   /xml/text/html/scipt 常用的是json/jsonp</li>
+<li>jsonp可能需要添加callback     jsonp:’xxxJsonpCallBack’,jsonpCallback:’xxxJsonpCallBack’</li>
+<li>async：true/false    ture为异步请求 默认   false同步请求 需要该请求完成才会执行下个请求</li>
+<li>success:成功回调函数返回结果</li>
+<li>常见请求数据返回结果案例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Ajax&lt;/title&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button type=&quot;submit&quot; id=&quot;send&quot; value=&quot;发送&quot;&gt;发送请求&lt;/button&gt;</span><br><span class="line">    &lt;div id=&quot;l1&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $(function()&#123;</span><br><span class="line">        $(&quot;#send&quot;).click(function()&#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                type:&quot;GET&quot;,</span><br><span class="line">                url:&apos;news.json&apos;,</span><br><span class="line">                dataType:&apos;json&apos;,</span><br><span class="line">                success:function(data)&#123;</span><br><span class="line">                    var htmljj = &quot;&quot;;</span><br><span class="line">                    var total = data.stories;</span><br><span class="line">                    for(var i=0;i&lt;total.length;i++)&#123;</span><br><span class="line">                        htmljj+=&quot;&lt;p&gt;&quot;+total[i].title+&quot;&lt;/p&gt;&quot;</span><br><span class="line">                        $(&quot;#l1&quot;).html(htmljj);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/27/盒子模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MyQueen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mypic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyQueen Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/27/盒子模型/" itemprop="url">盒子模型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T12:40:15+08:00">
+                2018-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端面试题总结/" itemprop="url" rel="index">
+                    <span itemprop="name">前端面试题总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="盒子模型是html-css中最核心的基础知识，理解了这个重要的概念才能更好的排版，进行页面布局。"><a href="#盒子模型是html-css中最核心的基础知识，理解了这个重要的概念才能更好的排版，进行页面布局。" class="headerlink" title="盒子模型是html+css中最核心的基础知识，理解了这个重要的概念才能更好的排版，进行页面布局。"></a>盒子模型是html+css中最核心的基础知识，理解了这个重要的概念才能更好的排版，进行页面布局。</h5><h5 id="盒子模型包括两种：标准盒子模型-标准w3c盒子模型-、IE盒子模型"><a href="#盒子模型包括两种：标准盒子模型-标准w3c盒子模型-、IE盒子模型" class="headerlink" title="盒子模型包括两种：标准盒子模型(标准w3c盒子模型)、IE盒子模型"></a>盒子模型包括两种：标准盒子模型(标准w3c盒子模型)、IE盒子模型</h5><ul>
+<li><p>标准盒子模型<br><img src="/2018/03/27/盒子模型/bzbox.jpg" alt=""></p>
+<p>图中最内部的框是元素的实际内容，也就是元素框，紧挨着元素框外部的是内边距padding，其次是边框（border），然后最外层是外边距（margin），整个构成了框模型。通常我们设置的背景显示区域，就是内容、内边距、边框这一块范围。而外边距margin是透明的，不会遮挡周边的其他元素。<br>那么，元素框的总宽度 = 元素（element）的width + padding的左边距和右边距的值 + margin的左边距和右边距的值 + border的左右宽度；<br>元素框的总高度 = 元素（element）的height + padding的上下边距的值 + margin的上下边距的值 ＋ border的上下宽度。</p>
+</li>
+<li><p>IE盒子模型<br><img src="/2018/03/27/盒子模型/iebox.jpg" alt=""></p>
+<p>图中元素的宽度包含了padding与border值，元素框的总宽度 = 元素（element）的width +  margin的左边距和右边距的值 ；<br>元素框的总高度 = 元素（element）的height +margin的上下边距的值 </p>
+
+</li>
+</ul>
+<h5 id="css-外边距合并（叠加）"><a href="#css-外边距合并（叠加）" class="headerlink" title="css 外边距合并（叠加）"></a>css 外边距合并（叠加）</h5><p><img src="/2018/03/27/盒子模型/hb1.png" alt="">    <img src="/2018/03/27/盒子模型/hb2.png" alt=""></p>
+<ul>
+<li>如图所示：当两个上下相邻元素合并时，外边框会合并，合并后的值为两个元素外边距较大的那个值：实例如下<br><img src="/2018/03/27/盒子模型/csshb.png" alt=""></li>
+<li>图上两个元素合并时，外边距为30px</li>
+<li>注意：只有普通文档流中块框的垂直外边距才会合并，行内框、浮动框、绝对定位的外边距都不会合并</li>
+<li><p>最后 用盒子模型画一个三角形</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.main&#123;</span><br><span class="line">		width:0px;</span><br><span class="line">		height:0px;</span><br><span class="line">		border:100px solid white;</span><br><span class="line">		border-top-color:red;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;breadcrumb&quot;&gt;&lt;/div&gt;</span><br><span class="line">解析：当我们把一个块级元素宽度和高度都设为0 只给一个border 那么这个块级元素就会出现一个border宽度：200px 高度：200px，</span><br><span class="line">只要我们在任意一方设置一个其它颜色 该border就会被分成四个均等的三角形</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>标准盒子模型与IE盒子模型之间转化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: border-box;  //IE盒子</span><br><span class="line">box-sizing: content-box;  //W3C盒子   默认</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/网页解析全过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MyQueen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mypic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyQueen Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/26/网页解析全过程/" itemprop="url">网页解析全过程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T17:23:57+08:00">
+                2018-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端面试题总结/" itemprop="url" rel="index">
+                    <span itemprop="name">前端面试题总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程"><a href="#本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程" class="headerlink" title="本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程"></a>本文将分别讲解经典的TCP协议建立连接（所谓的“3次握手”）和断开连接（所谓的“4次挥手”）的过程</h5><ul>
+<li>三次握手<br><img src="/2018/03/26/网页解析全过程/aaa.png" alt=""></li>
+<li>四次挥手<br><img src="/2018/03/26/网页解析全过程/aaa.png" alt=""></li>
+</ul>
+<h5 id="为什么连接只需要三步-断开连接需要四步呢？"><a href="#为什么连接只需要三步-断开连接需要四步呢？" class="headerlink" title="为什么连接只需要三步 断开连接需要四步呢？"></a>为什么连接只需要三步 断开连接需要四步呢？</h5><ul>
+<li>tcp断开连接四步是因为客户端发送FIN请求数据断开连接，服务器端接收到请求后并不会立刻关闭连接，可能传送数据还没有完成，先同意断开请求，等数据传送完毕后发送FIN断开数据连接，这两步是分开执行的，因此需要四步来完成断开</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/关于ng-include指令那些事/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MyQueen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mypic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyQueen Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/21/关于ng-include指令那些事/" itemprop="url">关于ng-include指令那些事</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T10:02:43+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/angular/" itemprop="url" rel="index">
+                    <span itemprop="name">angular</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/并通过github域名去访问/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MyQueen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mypic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyQueen Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/21/并通过github域名去访问/" itemprop="url">关于本地项目上传github并通过github域名去访问</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T09:48:17+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端学习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>作为一名前端工程师 github是一个很好的开源平台</li>
+<li>首先，如果你喜欢专研主流技术的源码，github上有多个框架源码是开源的;</li>
+<li>其次，如果你想找一些好的项目去练练手，github也是有非常多项目可以供你参考的;</li>
+<li>最后，如果你想把你自己的项目供别人去学习、参考，放在github上面或许是一种很好的选择;</li>
+<li>至于前面两点，自己去注册一个github账号玩一玩就会了，这里我想说的是如何把自己的项目放在github上，并通过github的url地址去访问<p style="text-align:center"><a style="width: 80px;height: 40px;line-height: 40px;display: block;margin: 0 auto;" href="https://www.jianshu.com/p/950e5b592ea9" target="_blank" rel="noopener">查看原文</a></p></li>
+</ul>
 
           
         
@@ -417,14 +1040,32 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
