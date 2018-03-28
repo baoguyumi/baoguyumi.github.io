@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="MyQueen Blog">
 <meta property="og:description" content="关于ajax方法总结(常用的方法)： type:GET/POST/JSONP url:’xxx’ 请求的地址 data:’{key:’value’,…}’ 键值对存在，请求参数附加在url后 dataType:json/jsonp   /xml/text/html/scipt 常用的是json/jsonp jsonp可能需要添加callback     jsonp:’xxxJsonpCallBac">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T07:07:48.290Z">
+<meta property="og:updated_time" content="2018-03-27T13:20:21.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax入门">
 <meta name="twitter:description" content="关于ajax方法总结(常用的方法)： type:GET/POST/JSONP url:’xxx’ 请求的地址 data:’{key:’value’,…}’ 键值对存在，请求参数附加在url后 dataType:json/jsonp   /xml/text/html/scipt 常用的是json/jsonp jsonp可能需要添加callback     jsonp:’xxxJsonpCallBac">
@@ -350,7 +350,8 @@
 <li>jsonp可能需要添加callback     jsonp:’xxxJsonpCallBack’,jsonpCallback:’xxxJsonpCallBack’</li>
 <li>async：true/false    ture为异步请求 默认   false同步请求 需要该请求完成才会执行下个请求</li>
 <li>success:成功回调函数返回结果</li>
-<li>常见请求数据返回结果案例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Ajax&lt;/title&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button type=&quot;submit&quot; id=&quot;send&quot; value=&quot;发送&quot;&gt;发送请求&lt;/button&gt;</span><br><span class="line">    &lt;div id=&quot;l1&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $(function()&#123;</span><br><span class="line">        $(&quot;#send&quot;).click(function()&#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                type:&quot;GET&quot;,</span><br><span class="line">                url:&apos;news.json&apos;,</span><br><span class="line">                dataType:&apos;json&apos;,</span><br><span class="line">                success:function(data)&#123;</span><br><span class="line">                    var htmljj = &quot;&quot;;</span><br><span class="line">                    var total = data.stories;</span><br><span class="line">                    for(var i=0;i&lt;total.length;i++)&#123;</span><br><span class="line">                        htmljj+=&quot;&lt;p&gt;&quot;+total[i].title+&quot;&lt;/p&gt;&quot;</span><br><span class="line">                        $(&quot;#l1&quot;).html(htmljj);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<li>常见请求数据返回结果案例<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Ajax&lt;/title&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button type=&quot;submit&quot; id=&quot;send&quot; value=&quot;发送&quot;&gt;发送请求&lt;/button&gt;</span><br><span class="line">    &lt;div id=&quot;l1&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $(function()&#123;</span><br><span class="line">        $(&quot;#send&quot;).click(function()&#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                type:&quot;GET&quot;,</span><br><span class="line">                url:&apos;news.json&apos;,</span><br><span class="line">                dataType:&apos;json&apos;,</span><br><span class="line">                success:function(data)&#123;</span><br><span class="line">                    var htmljj = &quot;&quot;;</span><br><span class="line">                    var total = data.stories;</span><br><span class="line">                    for(var i=0;i&lt;total.length;i++)&#123;</span><br><span class="line">                        htmljj+=&quot;&lt;p&gt;&quot;+total[i].title+&quot;&lt;/p&gt;&quot;</span><br><span class="line">                        $(&quot;#l1&quot;).html(htmljj);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -392,6 +393,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/27/关于github修改用户名后的破事/" rel="prev" title="关于github修改用户名后的破事">
+                关于github修改用户名后的破事 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -472,7 +477,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -483,7 +488,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
