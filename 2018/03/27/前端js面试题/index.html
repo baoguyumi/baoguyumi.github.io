@@ -82,14 +82,14 @@
 <meta name="description" content="事件代理，事件委托是什么意思？概述 什么是事件委托呢，它还有一个名字就叫事件代理。事件委托就是通过事件冒泡，只指定一个事件处理程序来就可以管理某一类型的所有事件;实例一 比如我们要实现点击每个li都弹出一个信息 12345678&amp;lt;div class=&amp;quot;main&amp;quot;&amp;gt;	&amp;lt;ul id=&amp;quot;ul1&amp;quot; style=&amp;quot;background-co">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="事件委托">
-<meta property="og:url" content="http://yoursite.com/2018/04/08/事件委托/index.html">
+<meta property="og:title" content="前端js面试题">
+<meta property="og:url" content="http://yoursite.com/2018/03/27/前端js面试题/index.html">
 <meta property="og:site_name" content="MyQueen Blog">
 <meta property="og:description" content="事件代理，事件委托是什么意思？概述 什么是事件委托呢，它还有一个名字就叫事件代理。事件委托就是通过事件冒泡，只指定一个事件处理程序来就可以管理某一类型的所有事件;实例一 比如我们要实现点击每个li都弹出一个信息 12345678&amp;lt;div class=&amp;quot;main&amp;quot;&amp;gt;	&amp;lt;ul id=&amp;quot;ul1&amp;quot; style=&amp;quot;background-co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-09T06:19:12.563Z">
+<meta property="og:updated_time" content="2018-04-10T09:42:43.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="事件委托">
+<meta name="twitter:title" content="前端js面试题">
 <meta name="twitter:description" content="事件代理，事件委托是什么意思？概述 什么是事件委托呢，它还有一个名字就叫事件代理。事件委托就是通过事件冒泡，只指定一个事件处理程序来就可以管理某一类型的所有事件;实例一 比如我们要实现点击每个li都弹出一个信息 12345678&amp;lt;div class=&amp;quot;main&amp;quot;&amp;gt;	&amp;lt;ul id=&amp;quot;ul1&amp;quot; style=&amp;quot;background-co">
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/08/事件委托/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/27/前端js面试题/"/>
 
 
 
 
 
-  <title>事件委托 | MyQueen Blog</title>
+  <title>前端js面试题 | MyQueen Blog</title>
   
 
 
@@ -161,7 +161,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">伪前端工程师</p>
+        <p class="site-subtitle">web前端工程师</p>
       
   </div>
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/事件委托/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/27/前端js面试题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MyQueen">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">事件委托</h1>
+          <h1 class="post-title" itemprop="name headline">前端js面试题</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-08T14:21:25+08:00">
-                2018-04-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T14:21:25+08:00">
+                2018-03-27
               </time>
             
 
@@ -382,6 +382,11 @@
 <li><p>上面是用事件委托的方式，新添加的子元素是带有事件效果的，我们可以发现，当用事件委托的时候，根本就不需要去遍历元素的子节点，只需要给父级元素添加事件就好了，其他的都是在js里面的执行，这样可以大大的减少dom操作，这才是事件委托的精髓所在</p>
 </li>
 </ul>
+<h2 id="javascript中call-apply-bind认识"><a href="#javascript中call-apply-bind认识" class="headerlink" title="javascript中call/apply/bind认识"></a>javascript中call/apply/bind认识</h2><p>先来看一段代码了解下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var cat = &#123;</span><br><span class="line">        food:&apos;fish&apos;,</span><br><span class="line">        add:function(a,b)&#123;</span><br><span class="line">            console.log(this.food);</span><br><span class="line">            console.log(this);</span><br><span class="line">            console.log(a+b);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    cat.add(2,3);   //	this.food -&gt;fish  this-&gt;object对象  </span><br><span class="line">    var b = cat.add;</span><br><span class="line">	b();	//undefined</span><br><span class="line">    b.call(cat,2,3);	this.food -&gt;fish  this-&gt;cat 类</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>引言：运行b()得到的是undefined，其实和我们的this指向有关系;因为此时this指向的是b;而下面cat.add()为什么能输出来能，因为此时this指向的是我们的a;也就是常说的那句，this始终指向的是调用它的那个对象;<br>虽然cat.add()()能打印出我们的数据，但是并不是最科学的方式，这时候可以通过下面的方法：<br>1.call():调用一个对象的一个方法，以另一个对象替换当前对象<br>说明：<br>call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。<br>如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。<br>2.apply():应用某一对象的一个方法，用另一个对象替换当前对象。<br>说明：<br>如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。<br>如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。<br>apply方法和call方法相似，它也可以改变this指向；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var cat = &#123;</span><br><span class="line">        food:&apos;fish&apos;,</span><br><span class="line">        add:function([a,b])&#123;</span><br><span class="line">            console.log(this.food);</span><br><span class="line">            console.log(this);</span><br><span class="line">            console.log(a+b);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    var b = cat.add;   //    this.food -&gt;fish  this-&gt;object对象  </span><br><span class="line">    b.call(cat,[2,3]);  //this.food -&gt;fish  this-&gt;cat 类</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="怎么添加，移动，移除，复制，创建和查找节点？"><a href="#怎么添加，移动，移除，复制，创建和查找节点？" class="headerlink" title="怎么添加，移动，移除，复制，创建和查找节点？"></a>怎么添加，移动，移除，复制，创建和查找节点？</h2><p>1)创建新节点<br>常用：<br>createElement():创建新元素<br>createTextNode():创建文本节点<br>不常用：<br>createDocumentFragment() //创建一个DOM片段</p>
+<p>2)增删改查<br>appendChild();    添加<br>removeChild();    删除<br>replaceChild();    替换<br>insertBefore();    插入</p>
+<p>3)查找<br>getElementById();    id查找<br>getElementsByTagName();    标签名查找<br>getElementByClassName();    类名查找    如果多个类名相同  x[num]去获取对应的<br>getElementsByName() //通过元素的Name属性的值</p>
 
       
     </div>
@@ -412,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/28/canvas学习笔记/" rel="next" title="canvas学习笔记">
-                <i class="fa fa-chevron-left"></i> canvas学习笔记
+              <a href="/2018/03/27/盒子模型/" rel="next" title="盒子模型">
+                <i class="fa fa-chevron-left"></i> 盒子模型
               </a>
             
           </div>
@@ -421,6 +426,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/27/Ajax入门/" rel="prev" title="Ajax入门">
+                Ajax入门 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -598,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件代理，事件委托是什么意思？"><span class="nav-number">1.</span> <span class="nav-text">事件代理，事件委托是什么意思？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例一"><span class="nav-number">1.2.</span> <span class="nav-text">实例一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例二"><span class="nav-number">1.3.</span> <span class="nav-text">实例二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例三"><span class="nav-number">1.4.</span> <span class="nav-text">实例三</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件代理，事件委托是什么意思？"><span class="nav-number">1.</span> <span class="nav-text">事件代理，事件委托是什么意思？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例一"><span class="nav-number">1.2.</span> <span class="nav-text">实例一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例二"><span class="nav-number">1.3.</span> <span class="nav-text">实例二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例三"><span class="nav-number">1.4.</span> <span class="nav-text">实例三</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript中call-apply-bind认识"><span class="nav-number">2.</span> <span class="nav-text">javascript中call/apply/bind认识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么添加，移动，移除，复制，创建和查找节点？"><span class="nav-number">3.</span> <span class="nav-text">怎么添加，移动，移除，复制，创建和查找节点？</span></a></li></ol></div>
             
 
           </div>
