@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="H5," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="关于移动适配问题引用网上的一张苹果不同型号手机图片可以看到经过几年的迭代，iPhone现在也有了多种不同尺寸的屏幕，分辨率也不尽相同，所以对我们做移动端的页面也有了很大的适配要求。安卓手机屏幕更加多样，并且现在移动端页面设计更加的酷炫，更加多样性，越来越与app页面相似，所以单纯的媒体查询已经很难完成移动端页面的适配，而且媒体查询开发起来也较为麻烦，除非你的移动端的页面较为简单。所以需要一个更加方">
+<meta name="keywords" content="H5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试中遇到的那些事">
+<meta property="og:url" content="http://yoursite.com/2018/04/11/面试中遇到的那些事/index.html">
+<meta property="og:site_name" content="MyQueen Blog">
+<meta property="og:description" content="关于移动适配问题引用网上的一张苹果不同型号手机图片可以看到经过几年的迭代，iPhone现在也有了多种不同尺寸的屏幕，分辨率也不尽相同，所以对我们做移动端的页面也有了很大的适配要求。安卓手机屏幕更加多样，并且现在移动端页面设计更加的酷炫，更加多样性，越来越与app页面相似，所以单纯的媒体查询已经很难完成移动端页面的适配，而且媒体查询开发起来也较为麻烦，除非你的移动端的页面较为简单。所以需要一个更加方">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/面试中遇到的那些事/设备像素.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/面试中遇到的那些事/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/面试中遇到的那些事/3.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/面试中遇到的那些事/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/面试中遇到的那些事/5.png">
+<meta property="og:updated_time" content="2018-04-12T05:39:03.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试中遇到的那些事">
+<meta name="twitter:description" content="关于移动适配问题引用网上的一张苹果不同型号手机图片可以看到经过几年的迭代，iPhone现在也有了多种不同尺寸的屏幕，分辨率也不尽相同，所以对我们做移动端的页面也有了很大的适配要求。安卓手机屏幕更加多样，并且现在移动端页面设计更加的酷炫，更加多样性，越来越与app页面相似，所以单纯的媒体查询已经很难完成移动端页面的适配，而且媒体查询开发起来也较为麻烦，除非你的移动端的页面较为简单。所以需要一个更加方">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/11/面试中遇到的那些事/设备像素.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/11/面试中遇到的那些事/"/>
+
+
+
+
+
+  <title>面试中遇到的那些事 | MyQueen Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MyQueen Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">web前端工程师</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-404公益">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            404公益
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/面试中遇到的那些事/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MyQueen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mypic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyQueen Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试中遇到的那些事</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T13:43:09+08:00">
+                2018-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端面试总结/" itemprop="url" rel="index">
+                    <span itemprop="name">前端面试总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="关于移动适配问题"><a href="#关于移动适配问题" class="headerlink" title="关于移动适配问题"></a>关于移动适配问题</h2><p>引用网上的一张苹果不同型号手机图片<br><img src="/2018/04/11/面试中遇到的那些事/设备像素.png" alt=""><br>可以看到经过几年的迭代，iPhone现在也有了多种不同尺寸的屏幕，分辨率也不尽相同，所以对我们做移动端的页面也有了很大的适配要求。<br>安卓手机屏幕更加多样，并且现在移动端页面设计更加的酷炫，更加多样性，越来越与app页面相似，所以单纯的媒体查询已经很难完成移动端页面的适配，而且媒体查询开发起来也较为麻烦，除非你的移动端的页面较为简单。<br>所以需要一个更加方便，更加准确兼容不同尺寸的适配方案。<br><a id="more"></a></p>
+<h3 id="移动端页面基本概念"><a href="#移动端页面基本概念" class="headerlink" title="移动端页面基本概念"></a>移动端页面基本概念</h3><p>1.viewport</p>
+<p>我们所能看到的手机端浏览器的可视窗口大小<br>viewport分为三种<br>layout viewport：布局视图 移动设备浏览器认为自己必须能够让所有网站都显示 即便那些不是为移动浏览器设计的网站 所以设计了一个大于屏幕尺寸的viewport 用来兼容那些不是为移动浏览器设计的网站<br>visual viewport：用来表示浏览器可视区域的大小 其宽度可以通过window.innerWidth获取<br>ideal viewport: 理想视图 用户不需要放大或缩小 页面也没有横向滚动条的视图 起步并不是一个固定的尺寸<br><img src="/2018/04/11/面试中遇到的那些事/2.png" alt=""><br>2.dpr dpi</p>
+<p>在这里介绍几个名词<br>设备像素：设备硬件的物理像素<br>设备分辨率：设备硬件所能支持的分辨率 每个数字代表每个设备像素<br>逻辑像素：软件所支持的像素<br>逻辑分辨率：软件所能支持的分辨率 每个数字代表了每个逻辑像素</p>
+<p>在早期3GS时代 可以看到设备分辨率是等于逻辑分辨率的<br>但随着技术发展 苹果推出了Retina屏幕<br>在屏幕尺寸不变的情况下 设备分辨率提高了一倍<br>这时候 设备分辨率就不等于逻辑分辨率了<br>也就是在苹果等高分辨率屏幕上 一个逻辑像素由多个物理像素所控制显示</p>
+<p>比如 iphone4上 一个逻辑像素 由 （640/320）* (960/480) = 4个物理像素所控制<br>这样的话 每个逻辑像素的显示能力得到了提升 相当于原来一个格子面积被分成了四个格子 每个格子可以显示不同的颜色<br>直观感受就是屏幕更加清晰</p>
+<p>CSS像素：在css文件中使用的px是一个相对单位 比如css中的1px 控制显示的是1逻辑像素 每个逻辑像素则由不同的物理像素控制</p>
+<p>dpr（Device Pixel Ratio: Number of device pixels per CSS Pixel）: 设备像素比 也叫dppx 就是一个css像素控制几个物理像素</p>
+<p>ppi: 像素密度 （Pixel Per Inch）单位面积含有的物理像素个数<br>Math.sqrt(750750 + 13341334) / 4.7 = 326ppi</p>
+<p>dpi:含义相同于ppi 表示单位面积上 含有的逻辑像素个数</p>
+<p>由此我们可得公式： 物理分辨率/逻辑分辨率（css分辨率）= dpr；<br>iphone6的dpr = 750/375 = 2;<br>iphone6+的dpr = 1242/414 = 3;</p>
+<p>但是问题又来了<br>在6+上 常常使用的是10801920的设备分辨率 而不是12422208的分辨率<br>dpr=2.6 并不是3<br>这个问题目前 大家也都是在猜测 戳这里(<a href="https://www.zhihu.com/question/25288571" target="_blank" rel="noopener">https://www.zhihu.com/question/25288571</a>)<br>在6p上也常常使用三种显示方案：<br>a.物理像素：12422280 逻辑像素：414736 DPR：3<br>b.物理像素：10801920 逻辑像素：360649 DPR：3<br>a.物理像素：10801920 逻辑像素：540960 DPR：2<br>现在较流行的方案是b方案 具体讨论可以看    戳这里(<a href="https://www.zhihu.com/question/25361043" target="_blank" rel="noopener">https://www.zhihu.com/question/25361043</a>)<br>另外 dpr用js也可以取到的 就挂载在window.对象上 window.devicePixelRatio<br><img src="/2018/04/11/面试中遇到的那些事/3.png" alt=""></p>
+<p>3.meta标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>代码以显示网页的屏幕宽度定义了视窗宽度。网页的比例和最大比例被设置为100%。<br>这个标签特别重要，基本上移动端页面都离不开这个标签，后面会讲到它。</p>
+<h3 id="移动端适配解决方案"><a href="#移动端适配解决方案" class="headerlink" title="移动端适配解决方案"></a>移动端适配解决方案</h3><p>主流适配方案<br>目前行业内流行几种适配方法：</p>
+<p>JS根据屏幕动态计算 使用js判断页面宽度算出页面应有的font-size<br>媒体查询 使用媒体查询 来兼容不同尺寸屏幕 设置不同尺寸下的rem大小<br>vw vh CSS3中的新尺寸单位 但是在安卓上兼容较差<br>flex布局 CSS3中提出的新布局方案 移动端的兼容性较好<br>在实际中，多是以上方案结合使用。<br>上述几种方案，提出了一个重要的概念：</p>
+<p>使用rem作为移动端尺寸单位替代px</p>
+<p>现在问很多人移动端适配方案的时候，他们都会说使用rem布局，或者是百分比布局。<br>既然rem布局深入人心，那么有个问题：</p>
+<p>1rem=?px</p>
+<p>rem适配方案<br>rem表示根节点html节点的font-size，其字体的大小决定了该页面rem的大小。<br>经过一段时间的观察发现，rem等于多少有很多方案，常见的有三种：</p>
+<p>1rem=16px；这个是默认的大小。<br>1rem= 75px；这个是手淘团队在flexible方案中在iphone6中的显示结果。flexible方案核心就是根据屏幕的dpr和尺寸，动态算出当前页的rem大小，动态的修改meta标签。该方案目前也被应用在手淘首页中。<br>1rem=100px；这个是阿里旗下的蚂蚁金服在Ant-mobile中的方案；（当然很多公司 也才用也采用此方案，因为100px比较好运算）ant-mobile也有自己高清解决方案，其核心跟flexible类似。现应用于ant-mobile中。<br>三种方案中，第二种flexible方案最出名，应用最广，也相对成熟<br>目前我个人采用的是rem布局 设置html font-size:100px;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//自适应网页单位的rem设置</span><br><span class="line">(function (doc, win) &#123;</span><br><span class="line">    var docEl = doc.documentElement,</span><br><span class="line">        resizeEvt = &apos;orientationchange&apos; in window ? &apos;orientationchange&apos; : &apos;resize&apos;,</span><br><span class="line">        recalc = function () &#123;</span><br><span class="line">            var clientWidth = docEl.clientWidth;</span><br><span class="line">            if (!clientWidth) return;</span><br><span class="line">            if(clientWidth&gt;=640)&#123;</span><br><span class="line">                docEl.style.fontSize = &apos;100px&apos;;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                docEl.style.fontSize = 100 * (clientWidth / 640) + &apos;px&apos;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">    if (!doc.addEventListener) return;</span><br><span class="line">    win.addEventListener(resizeEvt, recalc, false);</span><br><span class="line">    doc.addEventListener(&apos;DOMContentLoaded&apos;, recalc, false);</span><br><span class="line">&#125;)(document, window);</span><br></pre></td></tr></table></figure></p>
+<h2 id="原型、原型对象的理解-及其原型链继承"><a href="#原型、原型对象的理解-及其原型链继承" class="headerlink" title="原型、原型对象的理解 及其原型链继承"></a>原型、原型对象的理解 及其原型链继承</h2><p>在说原型与原型对象之前，当然有必要清楚构造函数，实例，原型与原型对象之间的关系。其实他们的关系也很简单。<br>构造函数有她自己的属性和方法，其中除了自定义的属性和方法外，还包括两个特殊属性(constructor、prototype),而它的每个实例都有它所有的<br>属性和方法(包括constructor、prototype),constructor则是指向每个实例的构造方法，而prototype原型则是一个地址指向原型对象，这个原型对象创建了实例后，只会取得constructor属性，其他的都是从Object继承而来；<br>下面我们使用一个例子展示下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   //构造函数</span><br><span class="line">   function Person()&#123;</span><br><span class="line">       this.name = &quot;lc&quot;</span><br><span class="line">   &#125;</span><br><span class="line">   //原型对象</span><br><span class="line">   Person.prototype.say = function()&#123;</span><br><span class="line">       console.log(this.constructor);</span><br><span class="line">       console.log(&quot;hello&quot;+this.name);</span><br><span class="line">   &#125;</span><br><span class="line">   //实例对象</span><br><span class="line">   var person = new Person();</span><br><span class="line">   person.say();</span><br><span class="line">打印出来的结果是：hello  lc</span><br></pre></td></tr></table></figure></p>
+<p>那我们来解析下代码：首先原型对象Person定义了公共的方法say,它的每个实例都将用有say方法;我们总结一点就是：<br>原型对象的作用为每个实例提供公共的方法和属性，它仅仅是一个普通对象而已，而所有的实例都共享该原型对象，原型对象只有一个;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">person.say === new Person().say;	//true</span><br></pre></td></tr></table></figure></p>
+<p>但如果我们把实例对象置于原型对象之前,输出的结果还是一样吗？即：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    function Person()&#123;</span><br><span class="line">        this.name = &quot;lc&quot;</span><br><span class="line">    &#125;</span><br><span class="line">	var person = new Person();</span><br><span class="line">    Person.prototype.say = function()&#123;</span><br><span class="line">        console.log(&quot;hello&quot;+&quot;   &quot;+this.name);</span><br><span class="line">    &#125;</span><br><span class="line">    person.say();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>答案是的，因为虽然原型对象在实例对象之后出现，但因为原型对象在调用之前已经申明，因此是可以输出的；如果我们在原型对象上添加更多的属性和方法<br>是不是每次都要去Person.prototype呢？还不如提炼成一个Object来的直接，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    function Person()&#123;</span><br><span class="line">        this.name = &quot;lc&quot;</span><br><span class="line">    &#125;</span><br><span class="line">	var person = new Person();</span><br><span class="line">    Person.prototype = &#123;</span><br><span class="line">		say:function()&#123;</span><br><span class="line">		    console.log(&quot;hello&quot;+&quot;   &quot;+this.name);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    person.say();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>突然发现控制台报错了，找不到say方法，当var person = new Person()时，Person.prototype为：Person {}(当然了，内部还有constructor属性),即Person.prototype指向一个空的对象{}。而对于实例person而言，其内部有一个原型链指针proto,该指针指向了Person.prototype指向的对象，即{}。接下来重置了Person的原型对象，使其指向了另外一个对象,即<br>Object {say: function}，这时person.proto的指向还是没有变，它指向的{}对象里面是没有say方法的，因为报错。<br>从这个现象我们可以得出：<br>在js中，对象在调用一个方法时会首先在自身里寻找是否有该方法，若没有，则去原型链上去寻找，依次层层递进，这里的原型链就是实例对象的<strong>proto</strong>属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Person () &#123;</span><br><span class="line">        this.name = &apos;John&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    Person.prototype = &#123;</span><br><span class="line">        say: function() &#123;</span><br><span class="line">            console.log(&apos;Hello,&apos; + this.name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    var person = new Person();</span><br><span class="line">    person.say();//person.say is not a function</span><br></pre></td></tr></table></figure></p>
+<p>如何体现先从自身寻找方法呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    function Person()&#123;</span><br><span class="line">        this.name = &quot;lc&quot;,</span><br><span class="line">		this.say = function()&#123;</span><br><span class="line">			console.log(&quot;aaaaaaaaa&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">	var person = new Person();</span><br><span class="line">    Person.prototype = &#123;</span><br><span class="line">		say:function()&#123;</span><br><span class="line">		    console.log(&quot;hello&quot;+&quot;   &quot;+this.name);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    person.say();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">输出aaaaaaaaa 这个就是先从自身去找</span><br></pre></td></tr></table></figure></p>
+<p>最后借鉴一张图<br><img src="/2018/04/11/面试中遇到的那些事/4.jpg" alt=""></p>
+<h2 id="HTTP-方法：GET-对比-POST"><a href="#HTTP-方法：GET-对比-POST" class="headerlink" title="HTTP 方法：GET 对比 POST"></a>HTTP 方法：GET 对比 POST</h2><p>借助w3c上面的介绍，两种最常用的 HTTP 方法是：GET 和 POST。那么什么是http呢？超文本传输协议（HTTP）的设计目的是保证客户机与服务器之间的通信。<br>HTTP 的工作方式是客户机与服务器之间的请求-应答协议。web 浏览器可能是客户端，而计算机上的网络应用程序也可能作为服务器端。<br>举例：客户端（浏览器）向服务器提交 HTTP 请求；服务器向客户端返回响应。响应包含关于请求的状态信息以及可能被请求的内容。</p>
+<p>在客户机和服务器之间进行请求-响应时，两种最常被用到的方法是：GET 和 POST。<br>GET - 从指定的资源请求数据。<br>POST - 向指定的资源提交要被处理的数据</p>
+<h4 id="Get方法"><a href="#Get方法" class="headerlink" title="Get方法"></a>Get方法</h4><p>请注意，查询字符串（名称/值对）是在 GET 请求的 URL 中发送的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">协议://域名：端口/url?参数1&amp;参数2...</span><br><span class="line">http://aaaaa:8080/test/demo_form.asp?name1=value1&amp;name2=value2</span><br></pre></td></tr></table></figure></p>
+<p>GET 请求可被缓存<br>GET 请求保留在浏览器历史记录中<br>GET 请求可被收藏为书签<br>GET 请求不应在处理敏感数据时使用<br>GET 请求有长度限制<br>GET 请求只应当用于取回数据</p>
+<h4 id="POST-方法"><a href="#POST-方法" class="headerlink" title="POST 方法"></a>POST 方法</h4><p>请注意，查询字符串（名称/值对）是在 POST 请求的 HTTP 消息主体中发送的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">POST /test/demo_form.asp HTTP/1.1</span><br><span class="line">Host: w3schools.com</span><br><span class="line">name1=value1&amp;name2=value2</span><br></pre></td></tr></table></figure></p>
+<p>POST 请求不会被缓存<br>POST 请求不会保留在浏览器历史记录中<br>POST 不能被收藏为书签<br>POST 请求对数据长度没有要求<br>最后以一张图说明区别<br><img src="/2018/04/11/面试中遇到的那些事/5.png" alt=""></p>
+<h2 id="前端性能优化"><a href="#前端性能优化" class="headerlink" title="前端性能优化"></a>前端性能优化</h2><h3 id="尽量减少http请求"><a href="#尽量减少http请求" class="headerlink" title="尽量减少http请求"></a>尽量减少http请求</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/H5/" rel="tag"># H5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/28/canvas学习笔记/" rel="next" title="canvas学习笔记">
+                <i class="fa fa-chevron-left"></i> canvas学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/mypic.jpg"
+                alt="MyQueen" />
+            
+              <p class="site-author-name" itemprop="name">MyQueen</p>
+              <p class="site-description motion-element" itemprop="description">快乐就是做自己喜欢的事情</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/baoguyumi/" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="741332627@qq.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/yourname" target="_blank" title="WeiBo">
+                    
+                      <i class="fa fa-fw fa-google"></i>WeiBo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://toutiao.io/u/342838" title="angular 4 修仙之路" target="_blank">angular 4 修仙之路</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于移动适配问题"><span class="nav-number">1.</span> <span class="nav-text">关于移动适配问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端页面基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">移动端页面基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端适配解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">移动端适配解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型、原型对象的理解-及其原型链继承"><span class="nav-number">2.</span> <span class="nav-text">原型、原型对象的理解 及其原型链继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-方法：GET-对比-POST"><span class="nav-number">3.</span> <span class="nav-text">HTTP 方法：GET 对比 POST</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Get方法"><span class="nav-number">3.0.1.</span> <span class="nav-text">Get方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#POST-方法"><span class="nav-number">3.0.2.</span> <span class="nav-text">POST 方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端性能优化"><span class="nav-number">4.</span> <span class="nav-text">前端性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#尽量减少http请求"><span class="nav-number">4.1.</span> <span class="nav-text">尽量减少http请求</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MyQueen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
